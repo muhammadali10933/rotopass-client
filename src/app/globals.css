@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #fff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-arupala: var(--font-arupala), sans-serif;
+  --font-dm: var(--font-dm-sans), sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #fff;
+  }
+}
+
+body {
+  background: var(--foreground);
+  color: var(--background);
+  font-family: "DM Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-arupala);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #e9522a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #d73e16;
+  }
+}
+
+.hover-underline {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.active-boxshadow-blue {
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(38, 181, 235, 0.5);
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+.active-boxshadow-orange {
+  &:active {
+    box-shadow: 0 0 0 .2rem rgba(233, 82, 42, 0.5);
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+.active-boxshadow-black {
+  &:active {
+    box-shadow: 0 0 0 .2rem rgba(38, 38, 38, 0.5);
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+.active-boxshadow-green {
+  &:active {
+    box-shadow: 0 0 0 .2rem rgba(43, 88, 94, 0.5);
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+.active-boxshadow-grey {
+  &:active {
+    box-shadow: 0 0 0 .2rem hsla(210, 2%, 75%, 0.5);
+    transition: ease-in-out;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+.logo-shadow {
+  filter: drop-shadow(0 4px 7px rgba(0, 0, 0, 0.25));
+}
+
+.text-shadow {
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+@layer utilities {
+  .accordion-content {
+    overflow: hidden;
+  }
+
+  .accordion-content[data-state="open"] {
+    animation: accordion-down 300ms ease-out;
+  }
+
+  .accordion-content[data-state="closed"] {
+    animation: accordion-up 300ms ease-out;
+  }
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+}
+
+iframe {
+  width: 300px !important;
+}
+
+label {
+  display: inline-block !important;
+}
+
+.braintree-form__notice-of-collection {
+  display: none !important;
+}
+
+.rp-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 7.5px;
+  width: 100%;
+}
+
+@media screen and (min-width: 1440px) {
+  .rp-container {
+    max-width: 1436px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .rp-container {
+    max-width: 1276px;
+  }
+}

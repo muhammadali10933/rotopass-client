@@ -3,7 +3,7 @@ import { getCookie } from "./cookie";
 
 const api = axios.create({
   // baseURL: "http://localhost:5000/api", //development
-  baseURL: "https://rotopass-server.onrender.com", //production
+  baseURL: "https://rotopass-server.onrender.com/api", //production
 });
 
 api.interceptors.request.use(
